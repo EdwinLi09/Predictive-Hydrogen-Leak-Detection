@@ -39,30 +39,32 @@ During testing, the neural network using penalty-sensitive loss made fewer mista
    - A single moment holds 16 streams of sensor readings, tagged by when they happened. Each chunk comes with exact coordinates showing where the link began, both X and Z positions marked clearly. Time passes inside every file, recorded across those 16 paths. Location isn't guessed, but rather it sits there in numbers alongisde the flow of measurements. Every case wraps timing, signals, and spots into one package. 
 
 2. **Preprocess**
-   - Clean missing values, combine scenarios, and scale inputs if needed.
+   - Fix gaps in data, merge situations when required, then adjust input sizes accordingly.
 
 3. **Train**
-   - Train the ANN model(s), and/or run the K-DTW evaluation.
+   - Start by setting up the artificial neural network training process. Following that, proceed with executing the K-DTW assessment phase. One step leads into the next without overlap. Each method operates on its own track yet feeds into the larger goal. Processing continues until both tasks complete their cycles. 
 
 4. **Evaluate**
-   - Compare predicted vs. true leak locations and summarize error (distance in meters).
+   - Looking at where leaks were expected versus where they actually happened helps measure accuracy. The gap between these points shows how far off predictions were. Distance in meters tells the size of each mistake. Results get added up to show overall performance. This summary gives a clear picture of reliability. 
 
 ## Tools often used
 - Python
 - pandas / NumPy
 - scikit-learn (preprocessing + tuning)
-- TensorFlow / Keras (ANN training)
+- TensorFlow and Keras for ANN training.
 
 ## Future improvements
-- Add more leak locations, leak sizes, and leak pressures
-- Tune K-DTW settings with more data
-- Test in other lab environments where airflow and sensor behavior are different
+- Throw in extra spots where leaks happen, along with bigger gaps and higher pressure levels.
+- Experimenting helps adjust K-DTW using extra samples. Sometimes tweaking works better when fed larger sets.
+- Feeding it richer inputs often sharpen results.
+- More instances refine how it aligns sequences.
+- Start by checking performance in alternate labs, since air movement varies there. Sensors might react differently because of how space shapes flow patterns. 
 
 ## Acknowledgements
-This work was completed during a DOE Office of Science internship program with support from NREL, with mentorship from Dr. Munjal Shah.
+Work finished under a DOE Office of Science internship, backed by NLR, guided closely by Munjal Shah. 
 
 ## Safety note
-This project is for research and testing. Any real safety system should include hardware safety controls, clear alarm logic, and validation under real operating conditions.
+Working on this helps explore ideas through trial. Real protection setups need physical safeguards instead of just software. Warning signals must make sense when they go off, not confuse people. Always check how things work when machines are actually running.
 
 
 
